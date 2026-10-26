@@ -1,14 +1,18 @@
-import cv2
+import cv2, os
 from ultralytics import YOLO
 
 def main():
+    # get script directory
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+
+    # resolve paths relative to script directory
+    model_path = os.path.join(script_dir, '../models/yolov8n-face.pt')
+
     # Load the dedicated face detection model
-    model_path = 'models/yolov8n-face.pt'
     print(f"Loading model: {model_path}...")
     model = YOLO(model_path)
 
     # Initialize webcam (0 is default webcam)
-    # Alternatively, provide a video file path, e.g., 'path/to/video.mp4'
     cap = cv2.VideoCapture(0)
 
     if not cap.isOpened():
