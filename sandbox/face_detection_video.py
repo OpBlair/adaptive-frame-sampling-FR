@@ -7,7 +7,7 @@ def main():
 
     # resolve paths relative to script directory
     model_path = os.path.join(script_dir, '../models/yolov8n-face.pt')
-    video_path = os.path.join(script_dir, 'video.mp4')
+    video_path = os.path.join(script_dir, 'video.mov')
 
     # Load the dedicated face detection model
     print(f"Loading model: {model_path}...")
